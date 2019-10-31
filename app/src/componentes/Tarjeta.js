@@ -1,10 +1,9 @@
 import React from 'react'
-import './tarjeta.css'
+import './css/tarjeta.css'
 
-const Tarjeta = (props) => {
+const Tarjeta = props => {
 
   const player = props.player
-  console.log(player)
   return (
 
     <div className="tarjeta">

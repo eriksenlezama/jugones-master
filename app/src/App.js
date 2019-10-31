@@ -1,13 +1,14 @@
 import './App.css'
 
 import React, { PureComponent } from 'react'
+import Header from './componentes/Header'
 import Tarjeta from './componentes/Tarjeta'
 const domain = 'http://localhost:3001'
 
 class App extends PureComponent {
   state = {
     teams: [],
-    players: []
+    players: [],
   }
 
   componentDidMount() {
@@ -31,9 +32,7 @@ class App extends PureComponent {
     const { teams, players } = this.state
 
     return <div className="App">
-      <header className="App-heading App-flex">
-        <h2>Jugadores</h2>
-      </header>
+      <Header></Header>
       <div className="App-teams App-flex">
         {/* 
           TODO ejercicio 2
