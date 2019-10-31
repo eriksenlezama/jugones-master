@@ -13,27 +13,44 @@ class App extends PureComponent {
   }
 
   componentDidMount() {
-    fetch(`${domain}/teams`)
-      .then(response => {
-        return response.json();
-      })
-      .then(teams => {
-        this.setState({ teams })
-      });
-    fetch(`${domain}/players`)
-      .then(response => {
-        return response.json();
-      })
-      .then(players => {
-        this.setState({ players })
-      });
-    fetch(`${domain}/pichichis`)
-      .then(response => {
-        return response.json();
-      })
-      .then(pichichis => {
-        this.setState({ pichichis })
-      });
+    if (localStorage.getItem('teams') === null) {
+      fetch(`${domain}/teams`)
+        .then(response => {
+          return response.json();
+        })
+        .then(teams => {
+          this.setState({ teams })
+          localStorage.setItem('teams', JSON.stringify(teams))
+        });
+    } else {
+      this.setState({teams: JSON.parse(localStorage.getItem('teams'))})
+    }
+
+    if (localStorage.getItem('players') === null) {
+      fetch(`${domain}/players`)
+        .then(response => {
+          return response.json();
+        })
+        .then(players => {
+          this.setState({ players })
+          localStorage.setItem('players', JSON.stringify(players))
+        });
+    } else {
+      this.setState({players: JSON.parse(localStorage.getItem('players'))})
+    }
+
+    if (localStorage.getItem('pichichis') === null) {
+      fetch(`${domain}/pichichis`)
+        .then(response => {
+          return response.json();
+        })
+        .then(pichichis => {
+          this.setState({ pichichis })
+          localStorage.setItem('pichichis', JSON.stringify(pichichis))
+        });
+    } else {
+      this.setState({pichichis: JSON.parse(localStorage.getItem('pichichis'))})
+    }
   }
 
   render() {
