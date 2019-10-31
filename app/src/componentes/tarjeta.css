@@ -1,0 +1,85 @@
+p {
+  font-family: sans-serif;
+}
+
+.tarjeta {
+  position: relative;
+  border: 1px solid #ddd;
+  border-radius: 9px;
+  margin: 40px;
+  min-width: 280px;
+  max-width: 400px;
+  padding: 0 30px;
+}
+
+.shield-player {
+  position: absolute;
+  width: 30px;
+  height: 30px;
+  top: 15px;
+  right: 10px;
+}
+
+div.img-player {
+  margin: auto;
+  width: 250px;
+  height: 250px;
+  margin-top: 20px;
+  border-radius: 50%;
+  overflow: hidden;
+}
+
+img.img-player {
+  max-height: 100%;
+  position: relative;
+  right: 70px;
+  height: auto;
+}
+
+.name-player {
+  margin-bottom: 5px;
+  font-size: 20px;
+}
+
+.team-player {
+  margin-top: 5px;
+}
+
+@media (max-width: 599px) {
+  .App-heading h2 {
+    font-size: 1em;
+  }
+
+  .tarjeta {
+    width: 100%;
+    margin-bottom: 10px;
+    display: flex;
+    padding: 10px;
+  }
+
+  div.img-player {
+    margin: 10px;
+    width: 75px;
+    height: 75px;
+  }
+
+  img.img-player {
+    right: 20px;
+  }
+
+  .content-player {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin-left: 10px;
+    text-align: left;
+  }
+
+  .team-player {
+    margin-top: 0px;
+  }
+
+  .name-player {
+    margin-bottom: 3px;
+  }
+}

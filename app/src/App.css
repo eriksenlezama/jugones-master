@@ -50,3 +50,17 @@
 .App-teams {
   flex-direction: column;
 }
+
+.App-teams ul {
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  box-sizing: border-box;
+}
+
+@media (max-width: 599px) {
+  .App-teams ul {
+    padding: 0;
+  }
+}

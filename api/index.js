@@ -31,7 +31,7 @@ var madrid = {
       id: '11',
       name: 'Karim Benzema',
       position: POSITIONS_ID.forward,
-      img: 'https://www.futboltotal.com.mx/wp-content/uploads/2018/01/karim-benzema-2018.jpg',
+      img: 'https://look.okdiario.com/img/2019/05/17/karim-benzema-655x368.jpg',
       price: 600,
     },
     {
@@ -210,8 +210,17 @@ app.get('/teams', function (req, res) {
 app.get('/players', function (req, res) {
   for (let p of atletico.players) {
     p.img = atleticoImages[p.id]
+    p.shield = atletico.shield
+    p.teamName = atletico.name
   }
-  console.log(atletico.players)
+  for (let p of madrid.players) {
+    p.shield = madrid.shield
+    p.teamName = madrid.name
+  }
+  for (let p of barcelona.players) {
+    p.shield = barcelona.shield
+    p.teamName = barcelona.name
+  }
   let players = [...madrid.players, ...barcelona.players, ...atletico.players ] 
   res.json(players)
 });

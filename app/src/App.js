@@ -1,6 +1,7 @@
 import './App.css'
 
 import React, { PureComponent } from 'react'
+import Tarjeta from './componentes/Tarjeta'
 const domain = 'http://localhost:3001'
 
 class App extends PureComponent {
@@ -48,7 +49,7 @@ class App extends PureComponent {
             Guiate por las imágenes.
            */}
           {
-            players.map(player => <li key={player.id}>{player.name}</li>)
+            players.map(player => <Tarjeta key={player.id} player={player}></Tarjeta>)
           }
         </ul>
       </div>
