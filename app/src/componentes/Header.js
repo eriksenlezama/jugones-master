@@ -9,7 +9,6 @@ class Header extends React.Component {
   }
   
   toggleModal = () => {
-    console.log("toggle")
     this.setState({showModal: !this.state.showModal})
   }
 
@@ -22,7 +21,7 @@ class Header extends React.Component {
         >
           Pichichis
         </button>
-        {this.state.showModal ? <Modal toggle={this.toggleModal} /> : null}
+        {this.state.showModal ? <Modal players={this.props.players} pichichis={this.props.pichichis} toggle={this.toggleModal} /> : null}
       </header>
     )
   }

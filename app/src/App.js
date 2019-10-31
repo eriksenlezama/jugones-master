@@ -9,6 +9,7 @@ class App extends PureComponent {
   state = {
     teams: [],
     players: [],
+    pichichis: []
   }
 
   componentDidMount() {
@@ -26,13 +27,20 @@ class App extends PureComponent {
       .then(players => {
         this.setState({ players })
       });
+    fetch(`${domain}/pichichis`)
+      .then(response => {
+        return response.json();
+      })
+      .then(pichichis => {
+        this.setState({ pichichis })
+      });
   }
 
   render() {
     const { teams, players } = this.state
 
     return <div className="App">
-      <Header></Header>
+      <Header players={this.state.players} pichichis={this.state.pichichis}></Header>
       <div className="App-teams App-flex">
         {/* 
           TODO ejercicio 2

@@ -34,6 +34,12 @@
   font-size: 18px;
 }
 
+.contenido ul {
+  width: 70%;
+  margin: auto;
+  margin-top: 30px;
+  padding: 0;
+}
 .cerrar {
   height: 40px;
   width: 100%;
@@ -44,5 +50,19 @@
 .cerrar .button {
   margin: 0;
   outline: none;
+  cursor: pointer;
+}
+
+.pichichi {
+  list-style: none;
+  margin-bottom: 10px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.negrita {
+  font-weight: 600;
+  text-decoration: underline;
+  margin-bottom: 20px;
   cursor: pointer;
 }
