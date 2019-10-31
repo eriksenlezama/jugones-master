@@ -60,9 +60,26 @@
   justify-content: space-between;
 }
 
+.pichichi div {
+  cursor: pointer;
+}
+
 .negrita {
   font-weight: 600;
   text-decoration: underline;
   margin-bottom: 20px;
-  cursor: pointer;
+}
+
+.flecha {
+  margin-left: 4px;
+  text-decoration: none;
+  display: inline-block;
+}
+
+.down {
+  transform: rotateZ(90deg)
+}
+
+.up {
+  transform: rotateZ(-90deg)
 }
