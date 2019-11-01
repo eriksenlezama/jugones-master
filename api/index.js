@@ -230,6 +230,7 @@ app.get('/pichichis', function (req, res) {
 });
 
 app.post('/transfer', function (req, res) {
+  console.log(req.body)
   var playerId = String(req.body.playerId)
   var teamId = String(req.body.teamId)
 

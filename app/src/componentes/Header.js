@@ -5,11 +5,13 @@ import './css/header.css'
 class Header extends React.Component {
 
   state = {
-    showModal: false
+    showModal: false,
+    modal: ""
   }
   
-  toggleModal = () => {
-    this.setState({showModal: !this.state.showModal})
+  toggleModal = modal => {
+    console.log(modal)
+    this.setState({showModal: !this.state.showModal, modal})
   }
 
   render() {
@@ -17,11 +19,27 @@ class Header extends React.Component {
       <header className="App-heading App-flex">
         <button 
           className="button pichichis"
-          onClick={this.toggleModal}
+          onClick={() => this.toggleModal("pichichis")}
         >
           Pichichis
         </button>
-        {this.state.showModal ? <Modal players={this.props.players} pichichis={this.props.pichichis} toggle={this.toggleModal} /> : null}
+        <button 
+          className="button traspasos"
+          onClick={() => this.toggleModal("traspasos")}
+        >
+          Traspasos
+        </button>
+        {
+          this.state.showModal ? 
+            <Modal 
+              modal={this.state.modal} 
+              players={this.props.players} 
+              teams={this.props.teams} 
+              pichichis={this.props.pichichis} 
+              toggle={() => this.toggleModal("")}
+            /> 
+          : null
+        }
       </header>
     )
   }

@@ -57,7 +57,7 @@ class App extends PureComponent {
     const { teams, players } = this.state
 
     return <div className="App">
-      <Header players={this.state.players} pichichis={this.state.pichichis}></Header>
+      <Header players={this.state.players} teams={this.state.teams} pichichis={this.state.pichichis}></Header>
       <div className="App-teams App-flex">
         {/* 
           TODO ejercicio 2

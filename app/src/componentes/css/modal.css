@@ -47,7 +47,15 @@
   align-items: flex-end;
 }
 
-.cerrar .button {
+.aceptar {
+  height: 40px;
+  width: 100%;
+  display: flex;
+  align-items: flex-end;
+  justify-content: flex-end;
+}
+
+.cerrar .button, .aceptar .button  {
   margin: 0;
   outline: none;
   cursor: pointer;
@@ -82,4 +90,25 @@
 
 .up {
   transform: rotateZ(-90deg)
+}
+
+div.traspasos {
+  width: 80%;
+  margin: auto;
+}
+
+.traspasos form {
+  display: flex;
+  flex-direction: column;
+}
+
+select {
+  margin-bottom: 20px;
+  height: 25px;
+  outline: none;
+  border-radius: 6px;
+}
+
+.buttons {
+  display: flex;
 }
