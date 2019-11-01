@@ -230,7 +230,6 @@ app.get('/pichichis', function (req, res) {
 });
 
 app.post('/transfer', function (req, res) {
-  console.log(req.body)
   var playerId = String(req.body.playerId)
   var teamId = String(req.body.teamId)
 
@@ -266,7 +265,18 @@ app.post('/transfer', function (req, res) {
   // añade el código para cambiar de equipo al jugador
   // restar el precio de la transacción al equipo
 
-  res.json({})
+
+  [madrid, barcelona, atletico].map(t => {
+    if (t.id === teamId) {
+      t.players.push(player)
+      t.money -= player.price
+    } 
+    if (t.id === teamIdPlayer) {
+      t.players = t.players.filter(p => p.id !== playerId)
+    }
+  })
+
+  res.json([madrid, barcelona, atletico])
 });
 
 app.listen(3001, function () {
